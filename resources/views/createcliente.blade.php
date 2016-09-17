@@ -94,6 +94,8 @@
         </div>
     </nav>
 
+    <h1>OLÁ CREATE</h1>
+
     @yield('content')
 
     <!-- Scripts -->

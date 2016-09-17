@@ -93,7 +93,7 @@
             </div>
         </div>
     </nav>
-
+    <h1>OLÁ INDEX</h1>
     @yield('content')
 
     <!-- Scripts -->
