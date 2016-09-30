@@ -20,6 +20,17 @@
         ]); ?>
     </script>
 </head>
+<style>
+    html, body {
+        background: url('/pergaminho.jpg') no-repeat fixed center center;
+        background-color: #fff;
+        color: white;
+        font-family: 'Cursive', serif;
+        font-weight: 100;
+        height: 100vh;
+        margin: 0;
+    }
+</style>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -54,6 +65,12 @@
                     @else
                     <!--menu cadastos e emprésimos-->                        
                         <ul class="nav nav-pills"> 
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home<span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/home">Home</a>  
+                                </div>
+                            </li>   
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros<span class="caret"></span></a> 
                                 <div class="dropdown-menu">

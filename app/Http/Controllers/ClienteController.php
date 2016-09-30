@@ -69,7 +69,7 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editcliente($id)
     {
         $cliente=Cliente::findOrFail($id);
         return view('editcliente', compact('cliente'));
@@ -95,7 +95,7 @@ class ClienteController extends Controller
         $cliente->uf = $request->uf;
         $cliente->complemento = $request->complemento;
         $cliente->save();
-        return redirect()->route('home.create');
+        return redirect()->route('home.cliente');
     }
 
     /**
