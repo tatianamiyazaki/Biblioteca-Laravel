@@ -5,7 +5,7 @@
     html, body {
         background: url('/pergaminho.jpg') no-repeat fixed center center;
         background-color: #fff;
-        color: white;
+        color: black;
         font-family: 'Cursive', serif;
         font-weight: 100;
         height: 100vh;
@@ -56,6 +56,37 @@
 </style>
 
 <div class="container">
-    <h1>HOME</h1>
-</div>
+
+ <div class="row">
+    
+      <div class="row">
+        <div class="col-sm-4" >
+            <h3><b<
+                <p>Viajar pela leitura</p>
+                <br>
+                <p>Viajar pela leitura</p>
+                <p>sem rumo, sem intenção.</p>
+                <p>Só para viver a aventura</p>
+                <p>que é ter um livro nas mãos.</p>
+                <p>É uma pena que só saiba disso</p>
+                <p>quem gosta de ler.</p>
+                <p>Experimente!</p>
+                <p>Assim sem compromisso,</p>
+                <p>você vai me entender.</p>
+                <p>Mergulhe de cabeça </p>
+                <p>na imaginação!</p></b><br>
+            </h3>
+            <h5><p>Clarice Pacheco</p></h5>
+        </div>
+        <div class="col-sm-8"><!--inserir fotos com links para livros-->
+            <br>
+            <br>
+            <img src= "/livros.png">
+        </div>
+                    
+      </div>
+    
+ 
+  
+    
 @endsection
