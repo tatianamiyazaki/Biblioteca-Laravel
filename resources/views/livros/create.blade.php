@@ -79,12 +79,19 @@ $(document).ready(function(){
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/home">Home</a>  
                                 </div>
-                            </li>    
+                            </li>   
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Consultas<span class="caret"></span></a> 
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="clientes">Clientes</a><br>
+                                    <a class="dropdown-item" href="livros">Livros</a>
+                                </div>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros<span class="caret"></span></a> 
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/cliente">Cliente</a><br>
-                                    <a class="dropdown-item" href="#">Livro/Mídia</a>
+                                    <a class="dropdown-item" href="/livro">Livro</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -120,75 +127,27 @@ $(document).ready(function(){
         </div>
     </nav>
 
-    <form class="form-horizontal">
-        <fieldset>
-            <!-- Formulário de cadastro de cliente -->
-            <legend align="center"><b>CADASTRO DE LIVRO</b></legend>
+    
+        <!-- Formulário de cadastro de cliente -->
+        <legend align="center"><b>CADASTRO DE LIVRO</b></legend>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                                    <div class="table-responsive">
+        <h4>Dados do Livro</h4>
 
-            <!-- Input nome do Título-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="nomeCliente">Título</label>  
-              <div class="col-md-4">
-              <input id="titulo" name="titulo" type="text" placeholder="titulo" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Subtítulo-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="telFixo">Subtítulo</label>  
-              <div class="col-md-4">
-              <input id="subtitulo" name="subtitulo" type="text" placeholder="subtitulo" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Autor-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="telCelular">Autor</label>  
-              <div class="col-md-4">
-              <input id="autor" name="autor" type="text" placeholder="autor" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Editora-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="bairro">Editora</label>  
-              <div class="col-md-4">
-              <input id="editora" name="editora" type="text" placeholder="editora" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Ano-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="rua">Ano</label>  
-              <div class="col-md-4">
-              <input id="ano" name="ano" type="text" placeholder="ano" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Edição-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="numero">Edição</label>  
-              <div class="col-md-4">
-              <input id="edicao" name="edicao" type="text" placeholder="edição" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Button cadastrar --> 
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="singlebutton"></label>
-                <div class="col-md-4">
-                    <button id="btnCadastrar" name="btnCadastrar" class="btn btn-primary">Cadastrar</button>
-                    <button id="btnCadastrar" name="btnCadastrar" class="btn btn-warning">Atualizar</button>
-                    <button id="btnCadastrar" name="btnCadastrar" class="btn btn-danger">Excluir</button>          
-                </div>
-            </div>
-
-          
-
-        </fieldset>
-    </form>
-
-
+        {!! Form::open(['route'=>'livros.store'])  !!}
+        {!! Form::text('titulo', null, ['placeholder' => 'título']) !!}
+        {!! Form::text('subtitulo', null, ['placeholder' => 'subtítulo']) !!}
+        {!! Form::text('autor', null, ['placeholder' => 'autor']) !!}
+        {!! Form::text('edicao', null, ['placeholder' => 'edição']) !!}
+        {!! Form::text('editora', null, ['placeholder' => 'editora']) !!}
+        {!! Form::text('ano', null, ['placeholder' => 'ano']) !!}
+        {!! Form::number('exemplares', null, ['placeholder' => 'exemplares']) !!}   
+        {!! Form::submit('Salvar') !!}
+        {!! Form::close() !!}         
+        
     @yield('content')
 
     <!-- Scripts -->

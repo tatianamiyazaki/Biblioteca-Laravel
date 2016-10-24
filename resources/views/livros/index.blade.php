@@ -117,40 +117,35 @@
             </div>
         </div>
     </nav>
-    <legend align="center"><b>NOSSOS CLIENTES</b></legend>
+    <legend align="center"><b>NOSSOS LIVROS</b></legend>
     <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>Nome</th>
-			<th>Telefone</th>
-			<th>Celular</th>
-			<th>E-mail</th>
-            <th>Rua</th>
-			<th>Nº</th>
-            <th>Cidade</th>
-            <th>UF</th>
-            <th>Complemento</th>
-			<th>Ação</th>
+			<th>Título</th>
+			<th>Subtítulo</th>
+			<th>Autor</th>
+			<th>Edição</th>
+            <th>Editora</th>
+			<th>Ano</th>
+            <th>Exemplares</th>
+            <th>Ação</th>
 		</tr>
 	</thead>
 	<tbody>
-	@foreach($clientes as $clientes)
+	@foreach($livros as $livros)
 		<tr>
-			<td>{{$clientes->nomeCliente}}</td>
-            <td>{{$clientes->telFixo}}</td>
-            <td>{{$clientes->telCelular}}</td>
-            <td>{{$clientes->email}}</td>
-            <td>{{$clientes->rua}}</td>
-            <td>{{$clientes->numero}}</td>
-            <td>{{$clientes->cidade}}</td>
-            <td>{{$clientes->uf}}</td>
-            <td>{{$clientes->complemento}}</td>
-			
+			<td>{{$livros->titulo}}</td>
+            <td>{{$livros->subtitulo}}</td>
+            <td>{{$livros->autor}}</td>
+            <td>{{$livros->edicao}}</td>
+            <td>{{$livros->ano}}</td>
+            <td>{{$livros->exemplares}}</td>
+            
 			<td>
-				<form method="POST" action="{{ route('clientes.destroy', $clientes->id) }}" accept-charset="UTF-8">
+				<form method="POST" action="{{ route('livros.destroy', $livros->id) }}" accept-charset="UTF-8">
 	                <input name="_method" type="hidden" value="DELETE">
 	                <input name="_token" type="hidden" value="{{ csrf_token() }}">
-	              	<a href="{{ route('clientes.edit', $clientes->id) }}" type="submit" button type="button" class="btn btn-warning">Editar</a>
+	              	<a href="{{ route('livros.edit', $livros->id) }}" type="submit" button type="button" class="btn btn-warning">Editar</a>
 	                <input onclick="return confirm('Excluir registro?');" type="submit" button type="button" class="btn btn-danger" value="Excluir" />
 	            </form>
 			</td>
@@ -158,7 +153,7 @@
 	@endforeach
 	</tbody>
 </table>
-<a href="{{ route('clientes.create') }}" button type="button" class="btn btn-info">Novo</a></button>
+<a href="{{ route('livros.create') }}" button type="button" class="btn btn-info">Novo</a></button>
 </div></div></div></div></div>
     
     @yield('content')

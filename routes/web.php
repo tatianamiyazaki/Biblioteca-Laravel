@@ -24,9 +24,13 @@ Route::get('/home', 'HomeController@index');
 //vai à página de cadastro de novo cliente
 Route::get('/cliente', 'ClienteController@create');
 
-//vai à página de edição de cliente
-//Route::get('/editcliente', 'ClienteController@edit');
-
 //vai à página de pesquisa de clientes (mostra clientes cadastrados)
 Route::resource('clientes', 'ClienteController');
+
+//vai à página de pesquisa de livros (mostra livros cadastrados)
+Route::resource('livros', 'LivroController');
+
+//vai à página de cadastro de novo livro
+Route::get('/livro', 'LivroController@create');
+
 

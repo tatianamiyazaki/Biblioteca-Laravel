@@ -70,7 +70,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/home">Home</a>  
                                 </div>
-                            </li>  
+                            </li>   
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Consultas<span class="caret"></span></a> 
                                 <div class="dropdown-menu">
@@ -117,53 +117,24 @@
             </div>
         </div>
     </nav>
-    <legend align="center"><b>NOSSOS CLIENTES</b></legend>
-    <table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Nome</th>
-			<th>Telefone</th>
-			<th>Celular</th>
-			<th>E-mail</th>
-            <th>Rua</th>
-			<th>Nº</th>
-            <th>Cidade</th>
-            <th>UF</th>
-            <th>Complemento</th>
-			<th>Ação</th>
-		</tr>
-	</thead>
-	<tbody>
-	@foreach($clientes as $clientes)
-		<tr>
-			<td>{{$clientes->nomeCliente}}</td>
-            <td>{{$clientes->telFixo}}</td>
-            <td>{{$clientes->telCelular}}</td>
-            <td>{{$clientes->email}}</td>
-            <td>{{$clientes->rua}}</td>
-            <td>{{$clientes->numero}}</td>
-            <td>{{$clientes->cidade}}</td>
-            <td>{{$clientes->uf}}</td>
-            <td>{{$clientes->complemento}}</td>
-			
-			<td>
-				<form method="POST" action="{{ route('clientes.destroy', $clientes->id) }}" accept-charset="UTF-8">
-	                <input name="_method" type="hidden" value="DELETE">
-	                <input name="_token" type="hidden" value="{{ csrf_token() }}">
-	              	<a href="{{ route('clientes.edit', $clientes->id) }}" type="submit" button type="button" class="btn btn-warning">Editar</a>
-	                <input onclick="return confirm('Excluir registro?');" type="submit" button type="button" class="btn btn-danger" value="Excluir" />
-	            </form>
-			</td>
-		</tr>
-	@endforeach
-	</tbody>
-</table>
-<a href="{{ route('clientes.create') }}" button type="button" class="btn btn-info">Novo</a></button>
-</div></div></div></div></div>
-    
-    @yield('content')
+    <legend align="center"><b>EDIÇÃO DE LIVRO</b></legend>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="table-responsive">
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <h4>Editar Dados do Livro</h4>
+    {!! Form::model($livros, ['route'=>['livros.update', $livros->id], 'method'=> 'PATCH'])  !!}
+        {!! Form::text('titulo', null, ['placeholder' => 'título']) !!}
+        {!! Form::text('subtitulo', null, ['placeholder' => 'subtítulo']) !!}
+        {!! Form::text('autor', null, ['placeholder' => 'autor']) !!}
+        {!! Form::text('edicao', null, ['placeholder' => 'edição']) !!}
+        {!! Form::text('editora', null, ['placeholder' => 'editora']) !!}
+        {!! Form::text('ano', null, ['placeholder' => 'ano']) !!}
+        {!! Form::number('exemplares', null, ['placeholder' => 'exemplares']) !!}        
+        {!! Form::submit('Editar') !!} 
+    {!! Form::close() !!}
+
 </body>
 </html>

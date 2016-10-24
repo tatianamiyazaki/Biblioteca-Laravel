@@ -58,14 +58,14 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Consultas<span class="caret"></span></a> 
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="clientes">Clientes</a><br>
-                                    <a class="dropdown-item" href="#">Livros</a>
+                                    <a class="dropdown-item" href="livros">Livros</a>
                                 </div>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros<span class="caret"></span></a> 
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="cliente">Cliente</a><br>
-                                    <a class="dropdown-item" href="#">Livro</a>
+                                    <a class="dropdown-item" href="livro">Livro</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
