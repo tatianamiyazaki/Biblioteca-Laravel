@@ -45,11 +45,11 @@ class ClienteController extends Controller
 
     public function edit($id)
     {
-        $cliente=Cliente::findOrFail($id);
+        $clientes=Cliente::findOrFail($id);
         return view('clientes.edit', compact('clientes'));
     }
 
-    public function update(Request $request, $codCliente)
+    public function update(Request $request, $id)
     {
         $clientes=Cliente::findOrFail($id);
         $clientes-> nomeCliente = $request-> nomeCliente;

@@ -10,18 +10,23 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+//página inicial (antes do login)
 Route::get('/', function () {
     return view('welcome');
 });
 
+//autenticação
 Auth::routes();
 
+//vai à página inicial
 Route::get('/home', 'HomeController@index');
 
+//vai à página de cadastro de novo cliente
 Route::get('/cliente', 'ClienteController@create');
 
-Route::get('/editcliente', 'ClienteController@edit');
+//vai à página de edição de cliente
+//Route::get('/editcliente', 'ClienteController@edit');
 
+//vai à página de pesquisa de clientes (mostra clientes cadastrados)
 Route::resource('clientes', 'ClienteController');
 

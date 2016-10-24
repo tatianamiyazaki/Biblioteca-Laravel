@@ -24,7 +24,7 @@
     html, body {
         background: url('/pergaminho.jpg') no-repeat fixed center center;
         background-color: #fff;
-        color: white;
+        color: black;
         font-family: 'Cursive', serif;
         font-weight: 100;
         height: 100vh;
@@ -75,7 +75,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros<span class="caret"></span></a> 
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/cliente">Cliente</a><br>
-                                    <a class="dropdown-item" href="#">Livro/Mídia</a>
+                                    <a class="dropdown-item" href="#">Livro</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -110,24 +110,24 @@
             </div>
         </div>
     </nav>
-    <h1>OLÁ EDIT</h1>
-      <div class="container">
-        <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-							<div class="table-responsive">
+    <legend align="center"><b>EDIÇÃO DE CLIENTE</b></legend>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="table-responsive">
 
-    <h4>EDITAR</h4>
-    {!! Form::model($clientes, ['route'=>['clientes.update', $clientes->codCliente], 'method'=> 'PATCH'])  !!}
-        {!! Form::text('nome', null) !!}
-        {!! Form::text('telFixo', null) !!}
-        {!! Form::text('telCelular', null) !!}
-        {!! Form::text('email', null) !!}
-        {!! Form::text('rua', null) !!}
-        {!! Form::text('numero', null) !!}
-        {!! Form::text('cidade', null) !!}
-        {!! Form::text('uf', null) !!}
-        {!! Form::text('complemento', null) !!}
+    <h4>Editar Dados do Cliente</h4>
+    {!! Form::model($clientes, ['route'=>['clientes.update', $clientes->id], 'method'=> 'PATCH'])  !!}
+        {!! Form::text('nome', null, ['placeholder' => 'nome']) !!}
+        {!! Form::text('telFixo', null, ['placeholder' => 'telefone fixo']) !!}
+        {!! Form::text('telCelular', null, ['placeholder' => 'celular']) !!}
+        {!! Form::text('email', null, ['placeholder' => 'e-mail']) !!}
+        {!! Form::text('rua', null, ['placeholder' => 'rua']) !!}
+        {!! Form::text('numero', null, ['placeholder' => 'numero']) !!}
+        {!! Form::text('cidade', null, ['placeholder' => 'cidade']) !!}
+        {!! Form::text('uf', null, ['placeholder' => 'uf']) !!}
+        {!! Form::text('complemento', null, ['placeholder' => 'complemento']) !!}
         {!! Form::submit('Editar') !!} 
     {!! Form::close() !!}
 

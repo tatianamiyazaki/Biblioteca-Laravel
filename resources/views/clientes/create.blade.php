@@ -84,7 +84,7 @@ $(document).ready(function(){
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros<span class="caret"></span></a> 
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/cliente">Cliente</a><br>
-                                    <a class="dropdown-item" href="#">Livro/Mídia</a>
+                                    <a class="dropdown-item" href="#">Livro</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -143,9 +143,6 @@ $(document).ready(function(){
             {!! Form::submit('Salvar') !!}
         {!! Form::close() !!}         
         
-
-
-
     @yield('content')
 
     <!-- Scripts -->
