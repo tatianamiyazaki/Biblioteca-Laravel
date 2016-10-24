@@ -12,27 +12,30 @@ class ClienteController extends Controller
 {
     public function index()
     {
-        $cliente = Cliente::all();
-        return view('indexcliente', compact('cliente'));
+        $clientes = Cliente::all();
+        return view('clientes.index', compact('clientes'));
     }
 
     public function create()
     {
-        return view('createcliente');
+        return view('clientes.create');
     }
+
+
     public function store(Request $request)
     {
-        $cliente->nomeCliente = $request->nomeCliente;
-        $cliente->telFixo = $request->telFixo;
-        $cliente->telCelular = $request->telCelular;
-        $cliente->numero = $request->numero;
-        $cliente->cidade = $request->cidade;
-        $cliente->rua = $request->rua;
-        $cliente->bairro = $request->bairro;
-        $cliente->uf = $request->uf;
-        $cliente->complemento = $request->complemento;
-        $cliente->save();
-        return redirect()->route('home.cliente');
+        $clientes = new Cliente();
+        $clientes-> nomeCliente = $request-> nomeCliente;
+        $clientes-> telFixo = $request-> telFixo;
+        $clientes-> telCelular = $request-> telCelular;
+        $clientes-> email = $request-> email;
+        $clientes-> numero = $request-> numero;
+        $clientes-> cidade = $request-> cidade;
+        $clientes-> uf = $request-> uf;
+        $clientes-> rua = $request-> rua;
+        $clientes-> complemento = $request-> complemento;
+        $clientes-> save();
+        return redirect()->route('clientes.index');
     }
 
     public function show($id)
@@ -40,32 +43,32 @@ class ClienteController extends Controller
         //
     }
 
-    public function editcliente($id)
+    public function edit($codCliente)
     {
-        $cliente=Cliente::findOrFail($id);
-        return view('editcliente', compact('cliente'));
+        $cliente=Cliente::findOrFail($codCliente);
+        return view('clientes.edit', compact('clientes'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $codCliente)
     {
-        $cliente = Cliente::findOrFail($id);
-        $cliente->nomeCliente = $request->nomeCliente;
-        $cliente->telFixo = $request->telFixo;
-        $cliente->telCelular = $request->telCelular;
-        $cliente->numero = $request->numero;
-        $cliente->cidade = $request->cidade;
-        $cliente->rua = $request->rua;
-        $cliente->bairro = $request->bairro;
-        $cliente->uf = $request->uf;
-        $cliente->complemento = $request->complemento;
-        $cliente->save();
-        return redirect()->route('home.cliente');
+        $clientes=Cliente::findOrFail($codCliente);
+        $clientes-> nomeCliente = $request-> nomeCliente;
+        $clientes-> telFixo = $request-> telFixo;
+        $clientes-> telCelular = $request-> telCelular;
+        $clientes-> email = $request-> email;
+        $clientes-> numero = $request-> numero;
+        $clientes-> cidade = $request-> cidade;
+        $clientes-> uf = $request-> uf;
+        $clientes-> rua = $request-> rua;
+        $clientes-> complemento = $request-> complemento;
+        $clientes-> save();
+        return redirect()->route('clientes.index');
     }
 
-    public function destroy($id)
+    public function destroy($codCliente)
     {
-        $cliente = Cliente::findOrFail($id);
+        $cliente = Cliente::findOrFail($codCliente);
         $cliente->delete();
-        return redirect()->route('home.cliente');
+        return redirect()->route('clientes.index');
     }
 }

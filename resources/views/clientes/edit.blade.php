@@ -111,10 +111,24 @@
         </div>
     </nav>
     <h1>OLÁ EDIT</h1>
+      <div class="container">
+        <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+							<div class="table-responsive">
 
-    @yield('content')
+    <h4>EDITAR</h4>
+    {!! Form::model($clientes, ['route'=>['home.update', $clientes->codCliente], 'method'=> 'PATCH'])  !!}
+        {!! Form::text('nome', null) !!}
+        {!! Form::text('telFixo', null) !!}
+        {!! Form::text('telCelular', null) !!}
+        {!! Form::text('email', null) !!}
+        {!! Form::text('numero', null) !!}
+        {!! Form::text('cidade', null) !!}
+        {!! Form::text('uf', null) !!}
+        {!! Form::text('complemento', null) !!}
+        {!! Form::submit('Editar') !!} 
+    {!! Form::close() !!}
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
 </body>
 </html>

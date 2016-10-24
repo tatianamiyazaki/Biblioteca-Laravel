@@ -123,106 +123,53 @@ $(document).ready(function(){
     <form class="form-horizontal">
         <fieldset>
             <!-- Formulário de cadastro de cliente -->
-            <legend align="center"><b>CADASTRO DE CLIENTE</b></legend>
+            <legend align="center"><b>CADASTRO DE LIVRO</b></legend>
 
-            <!-- Input nome do cliente-->
+            <!-- Input nome do Título-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="nomeCliente">Nome</label>  
+              <label class="col-md-4 control-label" for="nomeCliente">Título</label>  
               <div class="col-md-4">
-              <input id="nomeCliente" name="nomeCliente" type="text" placeholder="nome" class="form-control input-md">
+              <input id="titulo" name="titulo" type="text" placeholder="titulo" class="form-control input-md">
               </div>
             </div>
 
-            <!-- Input telefone fixo-->
+            <!-- Input Subtítulo-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="telFixo">Telefone fixo</label>  
+              <label class="col-md-4 control-label" for="telFixo">Subtítulo</label>  
               <div class="col-md-4">
-              <input id="telFixo" name="telFixo" type="text" placeholder="telefone fixo" class="form-control input-md">
+              <input id="subtitulo" name="subtitulo" type="text" placeholder="subtitulo" class="form-control input-md">
               </div>
             </div>
 
-            <!-- Input telefone celular-->
+            <!-- Input Autor-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="telCelular">Telefone Celular</label>  
+              <label class="col-md-4 control-label" for="telCelular">Autor</label>  
               <div class="col-md-4">
-              <input id="telCelular" name="telCelular" type="text" placeholder="telefone celular" class="form-control input-md">
+              <input id="autor" name="autor" type="text" placeholder="autor" class="form-control input-md">
               </div>
             </div>
 
-            <!-- Input Endereço-->
+            <!-- Input Editora-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="rua">Endereço</label>  
+              <label class="col-md-4 control-label" for="bairro">Editora</label>  
               <div class="col-md-4">
-              <input id="rua" name="rua" type="text" placeholder="endereço" class="form-control input-md">
+              <input id="editora" name="editora" type="text" placeholder="editora" class="form-control input-md">
               </div>
             </div>
 
-            <!-- Input Número-->
+            <!-- Input Ano-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="numero">Número</label>  
+              <label class="col-md-4 control-label" for="rua">Ano</label>  
               <div class="col-md-4">
-              <input id="numero" name="numero" type="text" placeholder="número" class="form-control input-md">
+              <input id="ano" name="ano" type="text" placeholder="ano" class="form-control input-md">
               </div>
             </div>
 
-            <!-- Input Complemento-->
+            <!-- Input Edição-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="complemento">Complemento</label>  
+              <label class="col-md-4 control-label" for="numero">Edição</label>  
               <div class="col-md-4">
-              <input id="complemento" name="bairro" type="text" placeholder="complemento" class="form-control input-md">
-              </div>
-            </div>
-
-
-            <!-- Input Bairro-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="bairro">Bairro</label>  
-              <div class="col-md-4">
-              <input id="bairro" name="bairro" type="text" placeholder="bairro" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Cidade-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="cidade">Cidade</label>  
-              <div class="col-md-4">
-              <input id="cidade" name="cidade" type="text" placeholder="cidade" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Select Basic -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="uf">UF</label>
-              <div class="col-md-4">
-                <select id="uf" name="uf" class="form-control">
-                  <option value="">Acre (AC)</option>
-                  <option value="">Alagoas (AL)</option>
-                  <option value="">Amapá (AP)</option>
-                  <option value="">Amazonas (AM)</option>
-                  <option value="">Bahia (BA)</option>
-                  <option value="">Ceará (CE)</option>
-                  <option value="">Distrito Federal (DF)</option>
-                  <option value="">Espírito Santo (ES)</option>
-                  <option value="">Goiás (GO)</option>
-                  <option value="">Maranhão (MA)</option>
-                  <option value="">Mato Grosso (MT)</option>
-                  <option value="">Mato Grosso do Sul (MS)</option>
-                  <option value="">Minas Gerais (MG)</option>
-                  <option value="">Pará (PA)</option>
-                  <option value="">Paraíba (PB)</option>
-                  <option value="">Paraná (PR)</option>
-                  <option value="">Pernambuco (PE)</option>
-                  <option value="">Piauí (PI)</option>
-                  <option value="">Rio de Janeiro (RJ)</option>
-                  <option value="">Rio Grande do Norte (RN)</option>
-                  <option value="">Rio Grande do Sul (RS)</option>
-                  <option value="">Rondônia (RO)</option>
-                  <option value="">Roraima (RR)</option>
-                  <option value="">Santa Catarina (SC)</option>
-                  <option value="">São Paulo (SP)</option>
-                  <option value="">Sergipe (SE)</option>
-                  <option value="">Tocantins (TO)</option>
-                </select>
+              <input id="edicao" name="edicao" type="text" placeholder="edição" class="form-control input-md">
               </div>
             </div>
 
@@ -231,18 +178,12 @@ $(document).ready(function(){
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4">
                     <button id="btnCadastrar" name="btnCadastrar" class="btn btn-primary">Cadastrar</button>
+                    <button id="btnCadastrar" name="btnCadastrar" class="btn btn-warning">Atualizar</button>
+                    <button id="btnCadastrar" name="btnCadastrar" class="btn btn-danger">Excluir</button>          
                 </div>
             </div>
 
-
-            
-
-
-            
-
-
-
-
+          
 
         </fieldset>
     </form>

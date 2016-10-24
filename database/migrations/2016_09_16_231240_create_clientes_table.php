@@ -18,11 +18,11 @@ class CreateClientesTable extends Migration
             $table->string('nomeCliente');
             $table->string('telFixo');
             $table->string('telCelular');
+            $table->string('email');
+            $table->string('rua');
             $table->integer('numero');
             $table->string('cidade');
-            $table->string('uf');
-            $table->string('bairro');
-            $table->string('rua');
+            $table->string('uf');           
             $table->string('complemento');
             $table->timestamps();
         });

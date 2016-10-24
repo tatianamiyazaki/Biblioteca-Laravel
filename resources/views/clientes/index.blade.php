@@ -111,6 +111,49 @@
         </div>
     </nav>
     <h1>OLÁ INDEX</h1>
+    <table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Telefone</th>
+			<th>Celular</th>
+			<th>E-mail</th>
+            <th>Rua</th>
+			<th>Nº</th>
+            <th>Cidade</th>
+            <th>UF</th>
+            <th>Complemento</th>
+			<th>Ação</th>
+		</tr>
+	</thead>
+	<tbody>
+	@foreach($clientes as $clientes)
+		<tr>
+			<td>{{$clientes->nomeCliente}}</td>
+            <td>{{$clientes->telFixo}}</td>
+            <td>{{$clientes->telCelular}}</td>
+            <td>{{$clientes->email}}</td>
+            <td>{{$clientes->rua}}</td>
+            <td>{{$clientes->numero}}</td>
+            <td>{{$clientes->cidade}}</td>
+            <td>{{$clientes->uf}}</td>
+            <td>{{$clientes->complemento}}</td>
+			
+			<td>
+				<form method="POST" action="{{ route('clientes.destroy', $clientes->codCliente) }}" accept-charset="UTF-8">
+	                <input name="_method" type="hidden" value="DELETE">
+	                <input name="_token" type="hidden" value="{{ csrf_token() }}">
+	              	<a href="{{ route('clientes.edit', $clientes->codCliente) }}" type="submit" button type="button" class="btn btn-warning">Editar</a>
+	                <input onclick="return confirm('Editar cliente?');" type="submit" button type="button" class="btn btn-danger" value="Hapus" />
+	            </form>
+			</td>
+		</tr>
+	@endforeach
+	</tbody>
+</table>
+<a href="{{ route('clientes.create') }}" button type="button" class="btn btn-info">Novo</a></button>
+</div></div></div></div></div>
+    
     @yield('content')
 
     <!-- Scripts -->
