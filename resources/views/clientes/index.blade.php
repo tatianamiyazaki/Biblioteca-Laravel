@@ -110,7 +110,7 @@
             </div>
         </div>
     </nav>
-    <legend align="center"><b>Nossos Clientes</b></legend>
+    <legend align="center"><b>NOSSOS CLIENTES</b></legend>
     <table class="table table-striped">
 	<thead>
 		<tr>
@@ -140,11 +140,11 @@
             <td>{{$clientes->complemento}}</td>
 			
 			<td>
-				<form method="POST" action="{{ route('clientes.destroy', $clientes->codCliente) }}" accept-charset="UTF-8">
+				<form method="POST" action="{{ route('clientes.destroy', $clientes->id) }}" accept-charset="UTF-8">
 	                <input name="_method" type="hidden" value="DELETE">
 	                <input name="_token" type="hidden" value="{{ csrf_token() }}">
-	              	<a href="{{ route('clientes.edit', $clientes->codCliente) }}" type="submit" button type="button" class="btn btn-warning">Editar</a>
-	                <input onclick="return confirm('Editar cliente?');" type="submit" button type="button" class="btn btn-danger" value="Hapus" />
+	              	<a href="{{ route('clientes.edit', $clientes->id) }}" type="submit" button type="button" class="btn btn-warning">Editar</a>
+	                <input onclick="return confirm('Excluir registro?');" type="submit" button type="button" class="btn btn-danger" value="Excluir" />
 	            </form>
 			</td>
 		</tr>

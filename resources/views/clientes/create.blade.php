@@ -120,7 +120,7 @@ $(document).ready(function(){
         </div>
     </nav>
 
-    <form class="form-horizontal">
+    
         <!-- Formulário de cadastro de cliente -->
         <legend align="center"><b>CADASTRO DE CLIENTE</b></legend>
         <div class="container">
@@ -128,7 +128,7 @@ $(document).ready(function(){
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
                                     <div class="table-responsive">
-        <h4>NOVO CLIENTE</h4>
+        <h4>Dados do Cliente</h4>
 
         {!! Form::open(['route'=>'clientes.store'])  !!}
             {!! Form::text('nome', null, ['placeholder' => 'nome']) !!}
@@ -140,10 +140,10 @@ $(document).ready(function(){
             {!! Form::text('cidade', null, ['placeholder' => 'Cidade']) !!}
             {!! Form::text('uf', null, ['placeholder' => 'UF']) !!}
             {!! Form::text('complemento', null, ['placeholder' => 'Complemento']) !!}
-            {!! Form::submit('Gravar') !!}
+            {!! Form::submit('Salvar') !!}
         {!! Form::close() !!}         
         
-    </form>
+
 
 
     @yield('content')
