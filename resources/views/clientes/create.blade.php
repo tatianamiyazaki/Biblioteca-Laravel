@@ -121,122 +121,28 @@ $(document).ready(function(){
     </nav>
 
     <form class="form-horizontal">
-        <fieldset>
-            <!-- Formulário de cadastro de cliente -->
-            <legend align="center"><b>CADASTRO DE CLIENTE</b></legend>
+        <!-- Formulário de cadastro de cliente -->
+        <legend align="center"><b>CADASTRO DE CLIENTE</b></legend>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                                    <div class="table-responsive">
+        <h4>NOVO CLIENTE</h4>
 
-            <!-- Input nome do cliente-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="nomeCliente">Nome</label>  
-              <div class="col-md-4">
-              <input id="nomeCliente" name="nomeCliente" type="text" placeholder="nome" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input telefone fixo-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="telFixo">Telefone fixo</label>  
-              <div class="col-md-4">
-              <input id="telFixo" name="telFixo" type="text" placeholder="telefone fixo" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input telefone celular-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="telCelular">Telefone Celular</label>  
-              <div class="col-md-4">
-              <input id="telCelular" name="telCelular" type="text" placeholder="telefone celular" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input E-mail-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="bairro">E-Mail</label>  
-              <div class="col-md-4">
-              <input id="email" name="email" type="text" placeholder="email" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Endereço-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="rua">Endereço</label>  
-              <div class="col-md-4">
-              <input id="rua" name="rua" type="text" placeholder="endereço" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Número-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="numero">Número</label>  
-              <div class="col-md-4">
-              <input id="numero" name="numero" type="text" placeholder="número" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Complemento-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="complemento">Complemento</label>  
-              <div class="col-md-4">
-              <input id="complemento" name="bairro" type="text" placeholder="complemento" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Input Cidade-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="cidade">Cidade</label>  
-              <div class="col-md-4">
-              <input id="cidade" name="cidade" type="text" placeholder="cidade" class="form-control input-md">
-              </div>
-            </div>
-
-            <!-- Select Basic -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="uf">UF</label>
-              <div class="col-md-4">
-                <select id="uf" name="uf" class="form-control">
-                  <option value="">Acre (AC)</option>
-                  <option value="">Alagoas (AL)</option>
-                  <option value="">Amapá (AP)</option>
-                  <option value="">Amazonas (AM)</option>
-                  <option value="">Bahia (BA)</option>
-                  <option value="">Ceará (CE)</option>
-                  <option value="">Distrito Federal (DF)</option>
-                  <option value="">Espírito Santo (ES)</option>
-                  <option value="">Goiás (GO)</option>
-                  <option value="">Maranhão (MA)</option>
-                  <option value="">Mato Grosso (MT)</option>
-                  <option value="">Mato Grosso do Sul (MS)</option>
-                  <option value="">Minas Gerais (MG)</option>
-                  <option value="">Pará (PA)</option>
-                  <option value="">Paraíba (PB)</option>
-                  <option value="">Paraná (PR)</option>
-                  <option value="">Pernambuco (PE)</option>
-                  <option value="">Piauí (PI)</option>
-                  <option value="">Rio de Janeiro (RJ)</option>
-                  <option value="">Rio Grande do Norte (RN)</option>
-                  <option value="">Rio Grande do Sul (RS)</option>
-                  <option value="">Rondônia (RO)</option>
-                  <option value="">Roraima (RR)</option>
-                  <option value="">Santa Catarina (SC)</option>
-                  <option value="">São Paulo (SP)</option>
-                  <option value="">Sergipe (SE)</option>
-                  <option value="">Tocantins (TO)</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Button cadastrar --> 
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="singlebutton"></label>
-                <div class="col-md-4">
-                    <button id="btnCadastrar" name="btnCadastrar" class="btn btn-primary">Cadastrar</button>
-                    <button id="btnCadastrar" name="btnCadastrar" class="btn btn-warning">Atualizar</button>
-                    <button id="btnCadastrar" name="btnCadastrar" class="btn btn-danger">Excluir</button>
-                </div>
-            </div>
-
-          
-        </fieldset>
+        {!! Form::open(['route'=>'clientes.store'])  !!}
+            {!! Form::text('nome', null, ['placeholder' => 'nome']) !!}
+            {!! Form::text('telFixo', null, ['placeholder' => 'telefone fixo']) !!}
+            {!! Form::text('telCelular', null, ['placeholder' => 'Telefone celular']) !!}
+            {!! Form::text('email', null, ['placeholder' => 'E-mail']) !!}
+            {!! Form::text('rua', null, ['placeholder' => 'Rua']) !!}
+            {!! Form::text('numero', null, ['placeholder' => 'Numero']) !!}
+            {!! Form::text('cidade', null, ['placeholder' => 'Cidade']) !!}
+            {!! Form::text('uf', null, ['placeholder' => 'UF']) !!}
+            {!! Form::text('complemento', null, ['placeholder' => 'Complemento']) !!}
+            {!! Form::submit('Gravar') !!}
+        {!! Form::close() !!}         
+        
     </form>
 
 

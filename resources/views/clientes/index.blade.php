@@ -24,7 +24,7 @@
     html, body {
         background: url('/pergaminho.jpg') no-repeat fixed center center;
         background-color: #fff;
-        color: white;
+        color: black;
         font-family: 'Cursive', serif;
         font-weight: 100;
         height: 100vh;
@@ -110,7 +110,7 @@
             </div>
         </div>
     </nav>
-    <h1>OLÁ INDEX</h1>
+    <legend align="center"><b>Nossos Clientes</b></legend>
     <table class="table table-striped">
 	<thead>
 		<tr>

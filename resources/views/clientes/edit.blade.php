@@ -118,11 +118,12 @@
 							<div class="table-responsive">
 
     <h4>EDITAR</h4>
-    {!! Form::model($clientes, ['route'=>['home.update', $clientes->codCliente], 'method'=> 'PATCH'])  !!}
+    {!! Form::model($clientes, ['route'=>['clientes.update', $clientes->codCliente], 'method'=> 'PATCH'])  !!}
         {!! Form::text('nome', null) !!}
         {!! Form::text('telFixo', null) !!}
         {!! Form::text('telCelular', null) !!}
         {!! Form::text('email', null) !!}
+        {!! Form::text('rua', null) !!}
         {!! Form::text('numero', null) !!}
         {!! Form::text('cidade', null) !!}
         {!! Form::text('uf', null) !!}
