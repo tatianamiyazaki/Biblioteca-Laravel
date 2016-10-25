@@ -136,6 +136,7 @@
 	<tbody>
 	@foreach($clientes as $clientes)
 		<tr>
+            <td>{{$clientes->id}}</td>    
 			<td>{{$clientes->nomeCliente}}</td>
             <td>{{$clientes->telFixo}}</td>
             <td>{{$clientes->telCelular}}</td>

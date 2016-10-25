@@ -126,7 +126,7 @@
 
     <h4>Editar Dados do Cliente</h4>
     {!! Form::model($clientes, ['route'=>['clientes.update', $clientes->id], 'method'=> 'PATCH'])  !!}
-        {!! Form::text('nome', null, ['placeholder' => 'nome']) !!}
+        {!! Form::text('nomeCliente', null, ['placeholder' => 'nome']) !!}
         {!! Form::text('telFixo', null, ['placeholder' => 'telefone fixo']) !!}
         {!! Form::text('telCelular', null, ['placeholder' => 'celular']) !!}
         {!! Form::text('email', null, ['placeholder' => 'e-mail']) !!}

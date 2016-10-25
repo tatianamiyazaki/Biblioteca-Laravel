@@ -138,6 +138,7 @@
             <td>{{$livros->subtitulo}}</td>
             <td>{{$livros->autor}}</td>
             <td>{{$livros->edicao}}</td>
+            <td>{{$livros->editora}}</td>
             <td>{{$livros->ano}}</td>
             <td>{{$livros->exemplares}}</td>
             

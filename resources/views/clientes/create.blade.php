@@ -138,7 +138,7 @@ $(document).ready(function(){
         <h4>Dados do Cliente</h4>
 
         {!! Form::open(['route'=>'clientes.store'])  !!}
-            {!! Form::text('nome', null, ['placeholder' => 'nome']) !!}
+            {!! Form::text('nomeCliente', null, ['placeholder' => 'nome']) !!}
             {!! Form::text('telFixo', null, ['placeholder' => 'telefone fixo']) !!}
             {!! Form::text('telCelular', null, ['placeholder' => 'Telefone celular']) !!}
             {!! Form::text('email', null, ['placeholder' => 'E-mail']) !!}
