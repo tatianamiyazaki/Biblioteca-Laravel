@@ -121,6 +121,7 @@
     <table class="table table-striped">
 	<thead>
 		<tr>
+            <th>ID</th>
 			<th>Nome</th>
 			<th>Telefone</th>
 			<th>Celular</th>

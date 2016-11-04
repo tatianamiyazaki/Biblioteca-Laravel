@@ -121,6 +121,7 @@
     <table class="table table-striped">
 	<thead>
 		<tr>
+            <th>ID</th>
 			<th>Título</th>
 			<th>Subtítulo</th>
 			<th>Autor</th>
@@ -134,6 +135,7 @@
 	<tbody>
 	@foreach($livros as $livros)
 		<tr>
+            <td>{{$livros->id}}</td>
 			<td>{{$livros->titulo}}</td>
             <td>{{$livros->subtitulo}}</td>
             <td>{{$livros->autor}}</td>
