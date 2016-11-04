@@ -31,15 +31,6 @@
         margin: 0;
     }
 </style>
-
-<!--script de máscaras para o formulário-->
-<script type="text/javascript">
-$(document).ready(function(){
-    $("input.telFixo").mask("(99)9999-9999");
-        $("input.telCelular").mask("(99)99999-9999");        
-});
-</script>
-
 <body>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -72,7 +63,7 @@ $(document).ready(function(){
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Registrar</a></li>
                     @else
-                    <!--menu home, cadastos e emprésimos-->                        
+                    <!--menu cadastos e emprésimos-->                        
                         <ul class="nav nav-pills"> 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home<span class="caret"></span></a>
@@ -126,31 +117,20 @@ $(document).ready(function(){
             </div>
         </div>
     </nav>
-
-    
-        <!-- Formulário de cadastro de cliente -->
-        <legend align="center"><b>CADASTRO DE LIVRO</b></legend>
+    <legend align="center"><b>EDIÇÃO DE LIVRO</b></legend>
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
-                                    <div class="table-responsive">
-        <h4>Dados do Livro</h4>
+                        <div class="table-responsive">
 
-        {!! Form::open(['route'=>'livros.store'])  !!}
-        {!! Form::text('titulo', null, ['placeholder' => 'título']) !!}
-        {!! Form::text('subtitulo', null, ['placeholder' => 'subtítulo']) !!}
-        {!! Form::text('autor', null, ['placeholder' => 'autor']) !!}
-        {!! Form::text('edicao', null, ['placeholder' => 'edição']) !!}
-        {!! Form::text('editora', null, ['placeholder' => 'editora']) !!}
-        {!! Form::text('ano', null, ['placeholder' => 'ano']) !!}
-        {!! Form::number('exemplares', null, ['placeholder' => 'exemplares']) !!}   
-        {!! Form::submit('Salvar') !!}
-        {!! Form::close() !!}         
-        
-    @yield('content')
+    <h4>Editar Empréstimo</h4>
+    {!! Form::model($emprestimos, ['route'=>['emprestimos.update', $emprestimos->id], 'method'=> 'PATCH'])  !!}
+        {!! Form::text('codCliente', null, ['placeholder' => 'Código do cliente']) !!}
+        {!! Form::text('codLivro', null, ['placeholder' => 'Código do livro']) !!}
+              
+        {!! Form::submit('Editar') !!} 
+    {!! Form::close() !!}
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
 </body>
 </html>

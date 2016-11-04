@@ -129,22 +129,18 @@ $(document).ready(function(){
 
     
         <!-- Formulário de cadastro de cliente -->
-        <legend align="center"><b>CADASTRO DE LIVRO</b></legend>
+        <legend align="center"><b>NOVO EMPRÉSTIMO</b></legend>
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
                                     <div class="table-responsive">
-        <h4>Dados do Livro</h4>
+        <h4>Dados do Empréstimo</h4>
 
-        {!! Form::open(['route'=>'livros.store'])  !!}
-        {!! Form::text('titulo', null, ['placeholder' => 'título']) !!}
-        {!! Form::text('subtitulo', null, ['placeholder' => 'subtítulo']) !!}
-        {!! Form::text('autor', null, ['placeholder' => 'autor']) !!}
-        {!! Form::text('edicao', null, ['placeholder' => 'edição']) !!}
-        {!! Form::text('editora', null, ['placeholder' => 'editora']) !!}
-        {!! Form::text('ano', null, ['placeholder' => 'ano']) !!}
-        {!! Form::number('exemplares', null, ['placeholder' => 'exemplares']) !!}   
+        {!! Form::open(['route'=>'emprestimos.store'])  !!}
+        {!! Form::text('codCliente', null, ['placeholder' => 'Código do Cliente']) !!}
+        {!! Form::text('codLivro', null, ['placeholder' => 'Código do Livro']) !!}
+         
         {!! Form::submit('Salvar') !!}
         {!! Form::close() !!}         
         

@@ -97,8 +97,8 @@ $(document).ready(function(){
                             <li class="nav-item dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Empréstimos<span class="caret"></span></a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Retirar</a><br>
-                                    <a class="dropdown-item" href="#">Devolver</a>
+                                    <a class="dropdown-item" href="/emprestimo">Retirar</a><br>
+                                    <a class="dropdown-item" href="emprestimos">Devolver</a>
                                 </div>
                             </li>
                             <li class="dropdown">

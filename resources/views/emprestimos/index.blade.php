@@ -31,15 +31,6 @@
         margin: 0;
     }
 </style>
-
-<!--script de máscaras para o formulário-->
-<script type="text/javascript">
-$(document).ready(function(){
-    $("input.telFixo").mask("(99)9999-9999");
-        $("input.telCelular").mask("(99)99999-9999");        
-});
-</script>
-
 <body>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -72,14 +63,14 @@ $(document).ready(function(){
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Registrar</a></li>
                     @else
-                    <!--menu home, cadastos e emprésimos-->                        
+                    <!--menu cadastos e emprésimos-->                        
                         <ul class="nav nav-pills"> 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home<span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/home">Home</a>  
                                 </div>
-                            </li>   
+                            </li>  
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Consultas<span class="caret"></span></a> 
                                 <div class="dropdown-menu">
@@ -126,28 +117,38 @@ $(document).ready(function(){
             </div>
         </div>
     </nav>
-
+    <legend align="center"><b>NOSSOS LIVROS</b></legend>
+    <table class="table table-striped">
+	<thead>
+		<tr>
+            <th>ID</th>
+			<th>Código do Cliente</th>
+			<th>Código do Livro</th>
+			<th>Ação</th>
+		</tr>
+	</thead>
+	<tbody>
+	@foreach($emprestimos as $emprestimos)
+		<tr>
+            <td>{{$emprestimos->id}}</td>
+			<td>{{$emprestimos->codCliente}}</td>
+            <td>{{$emprestimos->codLivro}}</td>
+            
+			<td>
+				<form method="POST" action="{{ route('emprestimos.destroy', $emprestimos->id) }}" accept-charset="UTF-8">
+	                <input name="_method" type="hidden" value="DELETE">
+	                <input name="_token" type="hidden" value="{{ csrf_token() }}">
+	              	<a href="{{ route('emprestimos.edit', $emprestimos->id) }}" type="submit" button type="button" class="btn btn-warning">Editar</a>
+	                <input onclick="return confirm('Excluir registro?');" type="submit" button type="button" class="btn btn-danger" value="Excluir" />
+	            </form>
+			</td>
+		</tr>
+	@endforeach
+	</tbody>
+</table>
+<a href="{{ route('emprestimos.create') }}" button type="button" class="btn btn-info">Novo</a></button>
+</div></div></div></div></div>
     
-        <!-- Formulário de cadastro de cliente -->
-        <legend align="center"><b>CADASTRO DE LIVRO</b></legend>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="panel panel-default">
-                                    <div class="table-responsive">
-        <h4>Dados do Livro</h4>
-
-        {!! Form::open(['route'=>'livros.store'])  !!}
-        {!! Form::text('titulo', null, ['placeholder' => 'título']) !!}
-        {!! Form::text('subtitulo', null, ['placeholder' => 'subtítulo']) !!}
-        {!! Form::text('autor', null, ['placeholder' => 'autor']) !!}
-        {!! Form::text('edicao', null, ['placeholder' => 'edição']) !!}
-        {!! Form::text('editora', null, ['placeholder' => 'editora']) !!}
-        {!! Form::text('ano', null, ['placeholder' => 'ano']) !!}
-        {!! Form::number('exemplares', null, ['placeholder' => 'exemplares']) !!}   
-        {!! Form::submit('Salvar') !!}
-        {!! Form::close() !!}         
-        
     @yield('content')
 
     <!-- Scripts -->

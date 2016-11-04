@@ -33,4 +33,8 @@ Route::resource('livros', 'LivroController');
 //vai à página de cadastro de novo livro
 Route::get('/livro', 'LivroController@create');
 
+//vai à página de cadastro de novo empréstimo
+Route::get('/emprestimo', 'EmprestimoController@create');
 
+//vai à página de pesquisa de empréstimos (mostra empréstimos cadastrados)
+Route::resource('emprestimos', 'EmprestimoController');
