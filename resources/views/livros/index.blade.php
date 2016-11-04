@@ -75,7 +75,8 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Consultas<span class="caret"></span></a> 
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="clientes">Clientes</a><br>
-                                    <a class="dropdown-item" href="livros">Livros</a>
+                                    <a class="dropdown-item" href="livros">Livros</a><br>
+                                    <a class="dropdown-item" href="emprestimos">Empréstimos</a>
                                 </div>
                             </li>
                             <li class="dropdown">
