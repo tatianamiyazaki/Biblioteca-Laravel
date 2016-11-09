@@ -8,6 +8,7 @@ use App\Http\Requests;
 
 use App\Emprestimo;
 
+
 class EmprestimoController extends Controller
 {
     /**
@@ -15,9 +16,10 @@ class EmprestimoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function index()
     {
-        
         $emprestimos = Emprestimo::all();
         return view('emprestimos.index', compact('emprestimos'));
     }
@@ -28,7 +30,7 @@ class EmprestimoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {      
         return view('emprestimos.create');
     }
 

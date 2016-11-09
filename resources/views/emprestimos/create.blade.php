@@ -141,7 +141,21 @@ $(document).ready(function(){
         {!! Form::open(['route'=>'emprestimos.store'])  !!}
         {!! Form::text('codCliente', null, ['placeholder' => 'Código do Cliente']) !!}
         {!! Form::text('codLivro', null, ['placeholder' => 'Código do Livro']) !!}
-         
+
+        {!!Form::select('cliente', array(DB::table('clientes')
+            ->select('clientes.nomeCliente')
+            ->get()));!!}
+
+        {!!Form::select('cliente',array(DB::table('clientes')
+            ->join('emprestimos', 'clientes.id', '=', 'emprestimos.codCliente')
+            ->select('clientes.nomeCliente')
+            ->get()));!!}
+
+        {!!Form::select('livro', array(DB::table('livros')
+            ->join('emprestimos', 'livros.id', '=', 'emprestimos.codLivro')
+            ->select('livros.titulo')
+            ->get()));!!}
+        
         {!! Form::submit('Salvar') !!}
         {!! Form::close() !!}         
         

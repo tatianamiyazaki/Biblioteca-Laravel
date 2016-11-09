@@ -129,7 +129,9 @@
 		</tr>
 	</thead>
 	<tbody>
-	@foreach($emprestimos as $emprestimos)
+   	@foreach($emprestimos as $emprestimos)
+    
+    
 		<tr>
             <td>{{$emprestimos->id}}</td>
 			<td>{{$emprestimos->codCliente}}</td>
