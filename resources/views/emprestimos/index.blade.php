@@ -129,8 +129,8 @@
 		</tr>
 	</thead>
 	<tbody>
+
    	@foreach($emprestimos as $emprestimos)
-    
     
 		<tr>
             <td>{{$emprestimos->id}}</td>

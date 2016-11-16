@@ -8,7 +8,11 @@ use App\Http\Requests;
 
 use App\Emprestimo;
 
+use App\Livro;
 
+use App\Cliente;
+
+use DB;
 class EmprestimoController extends Controller
 {
     /**
@@ -21,7 +25,16 @@ class EmprestimoController extends Controller
     public function index()
     {
         $emprestimos = Emprestimo::all();
-        return view('emprestimos.index', compact('emprestimos'));
+        $livros = DB::table('livros')
+            ->join('emprestimos', 'emprestimos.codLivro', '=', 'livros.id')
+            ->select('livros.titulo')
+            ->get();
+        $clientes = DB::table('clientes')
+            ->join ('emprestimos', 'emprestimos.codCliente', '=', 'clientes.id')
+            ->select('clientes.nomeCliente')
+            ->get();   
+        return view ('emprestimos.index', ['emprestimos'=>$emprestimos], ['livros'=>$livros], ['clientes'=>$clientes]);           
+        //return view('emprestimos.index', compact('emprestimos'));
     }
 
     /**
@@ -31,7 +44,9 @@ class EmprestimoController extends Controller
      */
     public function create()
     {      
-        return view('emprestimos.create');
+        $livros = Livro::select('titulo', 'id')->pluck('titulo', 'id')->prepend('Selecione um livro', '')->toArray();
+        $clientes = Cliente::select('nomeCliente','id')->pluck('nomeCliente','id')->prepend('Selecione um cliente', '')->toArray();
+        return view('emprestimos.create',['livros'=> $livros], ['clientes'=> $clientes]);
     }
 
     /**
@@ -70,7 +85,10 @@ class EmprestimoController extends Controller
     {
         
         $emprestimos=Emprestimo::findOrFail($id);
+        //$livros = Livro::select('titulo', 'id')->pluck('titulo', 'id')->prepend('Selecione um livro', '')->toArray();
+        //$clientes = Cliente::select('nomeCliente','id')->pluck('nomeCliente','id')->prepend('Selecione um cliente', '')->toArray();
         return view('emprestimos.edit', compact('emprestimos'));
+         //return view('emprestimos.edit',['emprestimos'=>$emprestimos], ['livros'=> $livros], ['clientes'=> $clientes]);
     }
 
     /**
