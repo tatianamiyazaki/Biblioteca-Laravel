@@ -125,6 +125,7 @@
             <th>ID</th>
 			<th>Código do Cliente</th>
 			<th>Código do Livro</th>
+            <th>Status</th>
 			<th>Ação</th>
 		</tr>
 	</thead>
@@ -136,7 +137,7 @@
             <td>{{$emprestimos->id}}</td>
 			<td>{{$emprestimos->codCliente}}</td>
             <td>{{$emprestimos->codLivro}}</td>
-            
+            <td>{{$emprestimos->status}}</td>
             
 			<td>
 				<form method="POST" action="{{ route('emprestimos.destroy', $emprestimos->id) }}" accept-charset="UTF-8">

@@ -19,6 +19,7 @@ class CreateEmprestimosTable extends Migration
             $table->foreign('codCliente')->references('id')->on('clientes');
             $table->integer('codLivro')->unsigned();            
             $table->foreign('codLivro')->references('id')->on('livros');
+            $table->string('status');
             $table->timestamps();
         });
     }

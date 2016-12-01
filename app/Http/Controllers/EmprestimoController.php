@@ -72,6 +72,7 @@ class EmprestimoController extends Controller
         $emprestimos = new Emprestimo();
         $emprestimos-> codCliente = $request-> codCliente;
         $emprestimos-> codLivro = $request-> codLivro;
+        $emprestimos-> status = $request-> status;
         $emprestimos-> save();
         return redirect()->route('emprestimos.index');
     }
@@ -112,6 +113,7 @@ class EmprestimoController extends Controller
         $emprestimos=Emprestimo::findOrFail($id);
         $emprestimos-> codCliente = $request-> codCliente;
         $emprestimos-> codLivro = $request-> codLivro;
+        $emprestimos-> status = $request-> status;
         $emprestimos-> save();
         return redirect()->route('emprestimos.index');
     }

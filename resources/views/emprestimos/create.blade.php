@@ -141,6 +141,7 @@ $(document).ready(function(){
         {!! Form::open(['route'=>'emprestimos.store'])  !!}
         {!! Form::select('codCliente', $clientes, old('codCliente')) !!}
         {!! Form::select('codLivro', $livros, old('codLivro')) !!}
+        {!! Form::select('status', array('Emprestado' => 'Emprestado', 'Devolvido' => 'Devolvido'), null, ['optional' => 'Status'])!!}    
         {!! Form::submit('Salvar') !!}
         {!! Form::close() !!}
 

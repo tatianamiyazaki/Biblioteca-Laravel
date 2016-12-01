@@ -128,7 +128,8 @@
     <h4>Editar Empréstimo</h4>
     {!! Form::model($emprestimos, ['route'=>['emprestimos.update', $emprestimos->id], 'method'=> 'PATCH'])  !!}
         {!! Form::text('codCliente', null, ['placeholder' => 'Código do cliente']) !!}
-        {!! Form::text('codLivro', null, ['placeholder' => 'Código do livro']) !!}              
+        {!! Form::text('codLivro', null, ['placeholder' => 'Código do livro']) !!}    
+        {!! Form::select('status', array('Emprestado' => 'Emprestado', 'Devolvido' => 'Devolvido'), null, ['optional' => 'Status'])!!}          
         {!! Form::submit('Salvar') !!} 
     {!! Form::close() !!}
 
