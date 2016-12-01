@@ -24,6 +24,7 @@ class CreateClientesTable extends Migration
             $table->string('cidade');
             $table->string('uf');           
             $table->string('complemento');
+            $table->string('status');
             $table->timestamps();
         });
     }

@@ -148,6 +148,7 @@ $(document).ready(function(){
             {!! Form::text('cidade', null, ['placeholder' => 'Cidade']) !!}
             {!! Form::text('uf', null, ['placeholder' => 'UF']) !!}
             {!! Form::text('complemento', null, ['placeholder' => 'Complemento']) !!}
+            {!! Form::select('status', array('Ativo' => 'Ativo', 'Inativo' => 'Inativo'), null, ['optional' => 'Status'])!!}    
             {!! Form::submit('Salvar') !!}
         {!! Form::close() !!}         
         

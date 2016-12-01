@@ -137,6 +137,7 @@
 			<td>{{$emprestimos->codCliente}}</td>
             <td>{{$emprestimos->codLivro}}</td>
             
+            
 			<td>
 				<form method="POST" action="{{ route('emprestimos.destroy', $emprestimos->id) }}" accept-charset="UTF-8">
 	                <input name="_method" type="hidden" value="DELETE">

@@ -130,6 +130,7 @@
             <th>Editora</th>
 			<th>Ano</th>
             <th>Exemplares</th>
+            <th>Status</th>
             <th>Ação</th>
 		</tr>
 	</thead>
@@ -144,7 +145,7 @@
             <td>{{$livros->editora}}</td>
             <td>{{$livros->ano}}</td>
             <td>{{$livros->exemplares}}</td>
-            
+            <td>{{$livros->status}}</td>
 			<td>
 				<form method="POST" action="{{ route('livros.destroy', $livros->id) }}" accept-charset="UTF-8">
 	                <input name="_method" type="hidden" value="DELETE">

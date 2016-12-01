@@ -133,8 +133,9 @@
         {!! Form::text('edicao', null, ['placeholder' => 'edição']) !!}
         {!! Form::text('editora', null, ['placeholder' => 'editora']) !!}
         {!! Form::text('ano', null, ['placeholder' => 'ano']) !!}
-        {!! Form::number('exemplares', null, ['placeholder' => 'exemplares']) !!}        
-        {!! Form::submit('Editar') !!} 
+        {!! Form::number('exemplares', null, ['placeholder' => 'exemplares']) !!}   
+        {!! Form::select('status', array('Ativo' => 'Ativo', 'Inativo' => 'Inativo'), null, ['optional' => 'Status']) !!}    
+        {!! Form::submit('Salvar') !!} 
     {!! Form::close() !!}
 
 </body>

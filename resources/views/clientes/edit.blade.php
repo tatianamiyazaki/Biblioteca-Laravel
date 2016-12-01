@@ -136,7 +136,8 @@
         {!! Form::text('cidade', null, ['placeholder' => 'cidade']) !!}
         {!! Form::text('uf', null, ['placeholder' => 'uf']) !!}
         {!! Form::text('complemento', null, ['placeholder' => 'complemento']) !!}
-        {!! Form::submit('Editar') !!} 
+        {!! Form::select('status', array('Ativo' => 'Ativo', 'Inativo' => 'Inativo'), null, ['optional' => 'Status'])!!}    
+        {!! Form::submit('Salvar') !!} 
     {!! Form::close() !!}
 
 </body>

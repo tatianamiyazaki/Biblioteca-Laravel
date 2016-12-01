@@ -46,7 +46,8 @@ class LivroController extends Controller
         $livros-> edicao = $request-> edicao;
         $livros-> editora = $request-> editora;
         $livros-> ano = $request-> ano;
-        $livros-> exemplares = $request-> exemplares;        
+        $livros-> exemplares = $request-> exemplares;      
+        $livros-> status = $request-> status;  
         $livros-> save();
         return redirect()->route('livros.index');
     }
@@ -90,7 +91,8 @@ class LivroController extends Controller
         $livros-> edicao = $request-> edicao;
         $livros-> editora = $request-> editora;
         $livros-> ano = $request-> ano;
-        $livros-> exemplares = $request-> exemplares;        
+        $livros-> exemplares = $request-> exemplares;    
+        $livros-> status = $request-> status;    
         $livros-> save();
         return redirect()->route('livros.index');
     }

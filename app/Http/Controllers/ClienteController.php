@@ -34,6 +34,7 @@ class ClienteController extends Controller
         $clientes-> uf = $request-> uf;
         $clientes-> rua = $request-> rua;
         $clientes-> complemento = $request-> complemento;
+        $clientes-> status = $request-> status;
         $clientes-> save();
         return redirect()->route('clientes.index');
     }
@@ -61,6 +62,7 @@ class ClienteController extends Controller
         $clientes-> uf = $request-> uf;
         $clientes-> rua = $request-> rua;
         $clientes-> complemento = $request-> complemento;
+        $clientes-> status = $request-> status;
         $clientes-> save();
         return redirect()->route('clientes.index');
     }

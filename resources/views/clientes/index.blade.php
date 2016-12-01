@@ -132,6 +132,7 @@
             <th>Cidade</th>
             <th>UF</th>
             <th>Complemento</th>
+            <th>Status</th>
 			<th>Ação</th>
 		</tr>
 	</thead>
@@ -148,6 +149,7 @@
             <td>{{$clientes->cidade}}</td>
             <td>{{$clientes->uf}}</td>
             <td>{{$clientes->complemento}}</td>
+            <td>{{$clientes->status}}</td>
 			
 			<td>
 				<form method="POST" action="{{ route('clientes.destroy', $clientes->id) }}" accept-charset="UTF-8">

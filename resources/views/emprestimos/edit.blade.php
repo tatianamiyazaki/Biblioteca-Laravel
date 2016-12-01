@@ -129,7 +129,7 @@
     {!! Form::model($emprestimos, ['route'=>['emprestimos.update', $emprestimos->id], 'method'=> 'PATCH'])  !!}
         {!! Form::text('codCliente', null, ['placeholder' => 'Código do cliente']) !!}
         {!! Form::text('codLivro', null, ['placeholder' => 'Código do livro']) !!}              
-        {!! Form::submit('Editar') !!} 
+        {!! Form::submit('Salvar') !!} 
     {!! Form::close() !!}
 
 </body>

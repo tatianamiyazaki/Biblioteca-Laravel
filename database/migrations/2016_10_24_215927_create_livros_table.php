@@ -22,6 +22,7 @@ class CreateLivrosTable extends Migration
             $table->string('editora');
             $table->string('ano');
             $table->integer('exemplares');
+            $table->string('status');
             $table->timestamps();
         });
     }
