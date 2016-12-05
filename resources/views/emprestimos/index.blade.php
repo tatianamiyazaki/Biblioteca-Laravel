@@ -123,8 +123,8 @@
 	<thead>
 		<tr>
             <th>ID</th>
-			<th>Código do Cliente</th>
-			<th>Código do Livro</th>
+			<th>Cliente</th>
+			<th>Livro</th>
             <th>Status</th>
 			<th>Ação</th>
 		</tr>
@@ -135,8 +135,18 @@
     
 		<tr>
             <td>{{$emprestimos->id}}</td>
-			<td>{{$emprestimos->codCliente}}</td>
-            <td>{{$emprestimos->codLivro}}</td>
+			<td>{{DB::table('emprestimos')
+            ->join('clientes', 'emprestimos.codCliente', '=', 'clientes.id')
+            ->select('clientes.nomeCliente')
+            ->where('emprestimos.codCliente', '=', $emprestimos->codCliente)
+            ->get()}}</td>
+
+            <td>{{DB::table('emprestimos')
+            ->join('livros', 'emprestimos.codLivro', '=', 'livros.id')
+            ->select('livros.titulo')
+            ->where('emprestimos.codLivro', '=', $emprestimos->codLivro)
+            ->get()}}</td>
+
             <td>{{$emprestimos->status}}</td>
             
 			<td>
