@@ -138,13 +138,13 @@
 			<td>{{DB::table('emprestimos')
             ->join('clientes', 'emprestimos.codCliente', '=', 'clientes.id')
             ->select('clientes.nomeCliente')
-            ->where('emprestimos.codCliente', '=', $emprestimos->codCliente)
+            ->where([['emprestimos.codCliente', '=', $emprestimos->codCliente], ['emprestimos.codLivro', '=', $emprestimos->codLivro]])
             ->get()}}</td>
 
             <td>{{DB::table('emprestimos')
             ->join('livros', 'emprestimos.codLivro', '=', 'livros.id')
             ->select('livros.titulo')
-            ->where('emprestimos.codLivro', '=', $emprestimos->codLivro)
+            ->where([['emprestimos.codLivro', '=', $emprestimos->codLivro],['emprestimos.codCliente', '=', $emprestimos->codCliente]])
             ->get()}}</td>
 
             <td>{{$emprestimos->status}}</td>

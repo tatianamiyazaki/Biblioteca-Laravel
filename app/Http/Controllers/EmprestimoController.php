@@ -25,28 +25,7 @@ class EmprestimoController extends Controller
     public function index()
     {
         $emprestimos = Emprestimo::all();
-        return view('emprestimos.index', compact('emprestimos'));
-        /*$livros = DB::table('emprestimos')
-            ->join('livros', 'emprestimos.codLivro', '=', 'livros.id')
-            ->select('livros.titulo')
-            ->get();
-
-
-        $clientes = DB::table('emprestimos')
-                ->join('clientes', function ($join) {
-                $join->on('emprestimos.codCliente', '=', 'clientes.id')
-                ->where('emprestimos.id', '=', '$empretimos->id');
-        })
-        ->select('clientes.nomeCliente')
-        ->get();
-        
-        $clientes = DB::table('emprestimos')
-            ->join ('clientes', 'emprestimos.codCliente', '=', 'clientes.id')
-            ->select('clientes.nomeCliente')
-            ->get();*/
-
-            
-        //return view ('emprestimos.index', ['emprestimos'=>$emprestimos], ['clientes'=>$clientes]);           
+        return view('emprestimos.index', compact('emprestimos'));                  
     }
 
     /**
